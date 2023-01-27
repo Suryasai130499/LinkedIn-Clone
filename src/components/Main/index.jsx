@@ -317,15 +317,18 @@ const Main = (props) => {
                 <Description>{article.description}</Description>
                 <SharedImage>
                   <a>
-                    {article.sharedImg !== '' ? (
+                    {article.video === '' ? (
                       <img
                         src={article.sharedImg || '/images/shared-image.jpg'}
                         alt='Post'
                       />
                     ) : (
                       <ReactPlayer
-                        url={article.videoUrl}
+                        url={article.video}
                         width='100%'
+                        style={{
+                          aspectRatio: '16/9',
+                        }}
                       />
                     )}
                   </a>
